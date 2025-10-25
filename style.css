@@ -75,3 +75,9 @@ img {
   width: 550px;
   height: auto;
 }
+
+@media (max-width: 600px){
+    .box{
+        width: 100%;
+    }
+}
