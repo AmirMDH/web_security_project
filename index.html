@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +9,20 @@
 <body dir="rtl">
     <h1>حملات اینترنتی</h1>
     <div class="attack-container">
-        <div class="sql-injection-container">
+        <div class="box sql-injection-container">
             <h2>1: حمله SQL Injection یا تزریق کد SQL</h2>
-            <img src="images/si.png" alt="">
+            <img src="images/si.png" alt="" class="title-img">
             <p>
                 حمله SQL Injection یکی از خطرناک ترین حملات به لایه پایگاه داده یا دیتا بیس هستش. در این حمله هکر به جای داده های معمولی دستورات SQL را در ورودی های فرم ها وارد میکنه. همچنین این حمله میتونه با پارامتر های URL و یا کوکی ها هم انجام بشه. این حمله وقتی موفقه که ورودی ها بدون اعتبار سنجی یا پاک سازی مستقیما تو کوئری های SQL استفاده و پردازش بشن. در این حمله، هدف هکر دسترسی غیر مجاز به داده های دیتا بیس، دور زدن احراز هویت، دزدیدن اطلاعات حساس، ایجاد تغییر تو اونها یا حذف اونها هستش. این حمله بسیار خطرناکه که میتونه در نهایت منجر به نفوذ کامل به دیتا بیس بشه و یا حداقل دزدیدن کمی اطلاعات.
             </p>
             <h3>نحوه جلوگیری از این حمله</h3>
-            <p>برای جلوگیری از این حملات باید از PDO برای اتصال به دیتا بیس و از Prepare statement برای عملیات CRUD یا Create, Read, Update, Delete استفاده کنیم.</p>
+            <p class="prevent-text">برای جلوگیری از این حملات باید از PDO برای اتصال به دیتا بیس و از Prepare statement برای عملیات CRUD یا Create, Read, Update, Delete استفاده کنیم.</p>
             <h3>جلوگیری از این حمله با استفاده از زبان برنامه نویسی PHP</h3>
-            <img src="images/snapshot/SI code.png" width="750" height="auto" alt="Some code for prevent SQL Injection attack.">
+            <img src="images/snapshot/SI code.png" alt="Some code for prevent SQL Injection attack." class="code-img">
         </div>
-        <div class="xss-container">
+        <div class="box xss-container">
             <h2>2: حمله XSS یا Cross-Site Scripting</h2>
-            <img src="images/xss.jpg" alt="">
+            <img src="images/xss.jpg" alt="" class="title-img">
             <p>
                 این نوع حمله در سمت فرانت سایت یا client side رخ میده. تو این حمله هکر اسکریپت های مخربی که معمولا با جاوا اسکریپت نوشته میشن را در ورودی هایی مثل فرم ها، کامنت ها یا URL ها وارد میکنه. اگر این ورودی ها بدون اعتبار سنجی و فیلتر مستقیما تو خروجی HTML نمایش داده بشن، اسکریپت هکر در مرورگر قربانی اجرا میشه. هدف این حمله تغییر ظاهر صفحه، یا اجرای عمیات ناخواسته در مرورگر، سرقت کوکی ها، دزدیدن نشست ها یا Session Hijacking هستند. این نوع حمله، حمله خطرناک محسوب میشه مخصوصا اگر هدف هکر اپلیکیشن هایی باشه که اطلاعات حساس و یا کاربران زیادی دارن.
             </p>
@@ -31,11 +31,11 @@
                 با استفاده از تابع htmlspecialchars میتونیم از این حمله جلوگیری کنیم. این تابع از اجرای اسکریپت های تزریق شده جلوگیری میکنه. یک راه دیگه محدود کردن منابع قابل اجرا در مروگر هستش که با فعال کردن گزینه Content Security Policy میتونیم از این گزینه بهره مند بشیم.
             </p>
             <h3>حالا چجوری میتونم از حمله XSS در زبان PHP جلوگیری کنم؟</h3>
-            <img src="images/snapshot/XSS code.png" width="750" height="auto" alt="Some code for prevent XSS attack">
+            <img src="images/snapshot/XSS code.png" alt="Some code for prevent XSS attack" class="code-img">
         </div>
-        <div class="csrf-container">
+        <div class="box csrf-container">
             <h2>3: حمله CSRF یا Cross-Site Request Forgery</h2>
-            <img src="images/csrf.jpg" alt="">
+            <img src="images/csrf.jpg" alt="" class="title-img">
             <p>
                 حمله CSRF یا "تقلب درخواست بین سایتی" نوعی حمله است که هکر بدون اجازه و اطلاع داشتن کاربر، عملی را در وبسایت انجام میده. این حمله معمولا زمانی اتفاق میوفته که کاربر دارای یک سشن و کوکی معتبر باشه و وارد یک لینک مخرب بشه. از اونجایی که بعد از اعتبار سنجی کاربر، وب سایت برای کاربر یک کوکی و سشن معتبر ایجاد میکنه، این حمله توسط این کوکی و سشن ها انجام میشه. 
             </p>
@@ -50,13 +50,14 @@
                 همچنین میتونیم تو وبسایت برای عملیات های حساس از کاربر دوباره درخواست پسورد کنیم تا مطمئن بشیم که کاربر واقعا خودشه.
             </p>
             <h3>چجوری امنیت وبسایتمون رو در برابر حمله CSRF با زبان PHP افزایش بدیم؟</h3>
-            <img src="images/snapshot/CSRF code1.png" width="750" height="auto" alt="Some code for prevent CSRF attack">
-            <img src="images/snapshot/CSRF code2.png" width="750" height="auto" alt="Some code for prevent CSRF attack">
-            <img src="images/snapshot/CSRF code3.png" width="750" height="auto" alt="Some code for prevent CSRF attack">
+            <img src="images/snapshot/CSRF code1.png" alt="Some code for prevent CSRF attack" class="code-img">
+            <img src="images/snapshot/CSRF code2.png" alt="Some code for prevent CSRF attack" class="code-img">
+            <img src="images/snapshot/CSRF code3.png" alt="Some code for prevent CSRF attack" class="code-img">
         </div>
-        <div class="ddos-container">
-            <h2>حمله DDoS یا Distributed Denial of Service</h2>
-            <img src="images/ddos.jpg" alt="">
+
+        <div class="box ddos-container">
+            <h2>4: حمله DDoS یا Distributed Denial of Service</h2>
+            <img src="images/ddos.jpg" alt="" class="title-img">
             <p>
                 حمله دی داس حمله ای به لایه شبکه و منابع سرور است که در آن مهاجم با استفاده از چندین منبع مثل بات نت ها حجم عظیمی از درخواست ها رو به سمت سرور قربانی ارسال میکنه. این حجم بالا باعث مصرف منابع سرور میشن و ممکنه سرویس برای کاربران واقعی قطع بشه. هدف هکر ها توی این حمله از کار انداختن سرویس ها و ایجاد اختلال در دسترسی و یا فشار روانی یا مالی به مدیران سایت ها هستش. این حمله، حمله خطرناکی هستش به خصوص برای سایت های تجاری و یا دولتی
             </p>
@@ -65,11 +66,12 @@
                 برای اینکه بتونیم از این حمله جلوگیری کنیم یا بهتر بگم احتمال اینکه وبسایتمون حمله دی داس بخوره رو احتمالش رو بیاریم پایین تر، میتونیم گزینه Rate Limiting و IP Blacklisting رو فعال کنیم. ترافیک رو به صورت لحظه ای مشاهده و چک کنیم و از سرویس های ضد دی داس AWS Shield استفاده کنیم. همچنین میتونیم از سرویس هایی مثل Cloudflare هم استفاده کنیم.
             </p>
             <h3>چجوری تو PHP اینکارو بکنیم؟</h3>
-            <img src="images/snapshot/DDoS code.png" width="750" height="auto" alt="Some code for prevent DDoS attack">
+            <img src="images/snapshot/DDoS code.png" alt="Some code for prevent DDoS attack" class="code-img">
         </div>
-        <div class="bfa-container">
-            <h2>حمله Brute Force یا  حمله جستجوی فراگیر</h2>
-            <img src="images/bfa.png" alt="">
+
+        <div class="box bfa-container">
+            <h2>5: حمله Brute Force یا  حمله جستجوی فراگیر</h2>
+            <img src="images/bfa.png" alt="" class="title-img">
             <p>
                 حمله بروت فورس یا جستجوی فراگیر یک حمله به لایه احراز هویت هستش. از اونجایی که در وبسایت ها برای تامین امنیت اکانت کاربر از رمز عبور استفاده میشه، هکر با این حمله سعی میکنه که لیستی از رمز های مختلف رو در اکانت فرد مورد نظر امتحان میکنه تا بتونه وارد بشه . هدف هم که خب معلومه، نغوذ به حساب کاربر، دسترسی به پنل مدیریت توسط ورود به اکانت ادمین. سطح تهدید این حمله متوسط هستش، در واقع سطح تهدید این هک رو نوع اکانت شما و اینکه در چه وبسایتی هستین معلوم میکنه. 
             </p>
@@ -81,11 +83,12 @@
                 پ.ن: پسورد هش چون جوری برنامه نویسی شده که یک رمز گذاری کند هستش، مدت زمان امتحان کردن رمز های مختلف رو یکم به تعویق میندازه.
             </p>
             <h3>چجوری میتونم این کارارو تو زبان PHP انجام بدیم؟</h3>
-            <img src="images/snapshot/BFA code.png"  width="750" height="auto" alt="Some code for prevent BFA attack">
+            <img src="images/snapshot/BFA code.png" alt="Some code for prevent BFA attack" class="code-img">
         </div>
-        <div class="malware-injection-container">
-            <h2>حمله malware injection یا تزریق بد افزار</h2>
-            <img src="images/mi.png" alt="">
+
+        <div class="box malware-injection-container">
+            <h2>6: حمله malware injection یا تزریق بد افزار</h2>
+            <img src="images/mi.png" alt="" class="title-img">
             <p>
                 در این حمله هکر با بد افزاری که ساخته، از طریق فیلد های آپلود فایل این فایل مخرب رو میفرسته. عملکرد این حمله به این شکله که فرد فایل مخربی که از نوع php. و exe. هستش رو در فیلد های ارسال فایل میفرسته و میتونه کنترل سرور رو به دست بگیره و اطلاعات کاربران رو بدزده.
             </p>
@@ -94,7 +97,7 @@
               اول اینکه برای شناسایی این فایل ها میتونیم فایل های آپلودی رو اسکن کنیم و از هشدار های آنتی ویروس یا Google Safe Browsing استفاده کنیم؛ و دوم اینکه میتونیم از روش هایی مثل محدود کردن نوع پسوند فایل های اجرایی و اسکن فایل ها با آنتی ویروس قبل از اجرا میتونیم با این حمله مقابله کنیم.
             </p>
             <h3>چجوری میتونم با php از این حمله جلوگیری کنیم؟</h3>
-            <img src="images/snapshot/MI code.png"  width="750" height="auto" alt="Some code for prevent MI attack">
+            <img src="images/snapshot/MI code.png" alt="Some code for prevent MI attack" class="code-img">
         </div>
     </div>
 </body>

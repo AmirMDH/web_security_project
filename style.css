@@ -1,17 +1,77 @@
 @font-face {
-    font-family: "vazir";
-    src: url(Vazir.ttf);
+  font-family: "vazir";
+  src: url(Vazir.ttf);
 }
 
- *{
-    font-family: "vazir";
- }
-:root{
-    --bg-color: #121212;
-    --card-color: #1E1E1E;
-    --accent-color: #0FF;
-    --daner-color: #FF3B3B;
-    --success-color: #00C853;
-    --text-secondary: #B0BEC5;
-    --text-color: #ECEFF1;
+* {
+  font-family: "vazir";
+}
+:root {
+  --bg-color: #121212;
+  --card-color: #1e1e1e;
+  --accent-color: #0ff;
+  --danger-color: #ff3b3b;
+  --success-color: #00c853;
+  --text-secondary: #b0bec5;
+  --text-color: #eceff1;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.attack-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
+}
+h3 {
+  color: var(--accent-color);
+}
+h2 {
+  color: var(--danger-color);
+}
+.box {
+  width: calc(50% - 10px);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px solid var(--success-color);
+  overflow: hidden;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.attack-container:hover .box {
+  filter: blur(6px);
+  opacity: 20;
+  transform: scale(0.995);
+}
+
+.attack-container .box:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+img {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+.title-img {
+  width: 150px;
+  border-radius: 50px;
+}
+.code-img {
+  width: 550px;
+  height: auto;
 }
